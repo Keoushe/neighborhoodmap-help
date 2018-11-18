@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+#map {
+  min-height: 100vh;
+}
+
+#list {
+  width: 25%;
+  height: 100%;
+  background-color: antiquewhite;
+  z-index: 1;
+  position: absolute;
+}

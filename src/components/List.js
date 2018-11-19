@@ -15,7 +15,9 @@ class List extends React.Component {
               <div>
                 <p className="title">
                   Name:{" "}
-                  <a href="#" onClick={() => this.props.showInfoContent(loc)}>{loc.venue.name}</a></p>
+                  <a href="#" onClick={() => this.props.showInfoContent(loc)}>{loc.venue.name}
+                  </a>
+                </p>
                 <p> Address {loc.venue.location.address}</p>
               </div>
             </li>

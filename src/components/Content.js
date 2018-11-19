@@ -5,12 +5,14 @@ import * as LocationsAPI from "../api/Locations";
 
 class Content extends React.Component {
   state = {
-    locations: []
+    locations: [],
+    allLocations: [],
+    query: "",
   };
   componentDidMount() {
     console.log("DATA");
     LocationsAPI.getLocations().then(resp =>
-      this.setState({ locations: resp })
+      this.setState({ locations: resp, allLocations: resp })
     );
   }
 
@@ -27,6 +29,22 @@ class Content extends React.Component {
       }
     }
   }
+
+handleTextChange = (query) => {
+  this.setState({ query })
+  if (query) {
+    this.setState({
+      locations: this.filterLocations(query, this.state.locations)
+    })
+  } else {
+    this.setState({locations: this.state.allLocations})
+  }
+};
+
+filterLocations = (query, locations) => {
+  return locations.filter(location => location.venue.name.toLowerCase().includes(query.toLowerCase()));
+}
+
   render() {
     console.log(this.state.locations);
 
@@ -35,6 +53,8 @@ class Content extends React.Component {
         <List
           locations={this.state.locations}
           showInfoContent={this.handleClick}
+          queryString = {this.state.query}
+          handleChange = {this.handleTextChange}
         />
         <Map locations={this.state.locations} />
       </div>

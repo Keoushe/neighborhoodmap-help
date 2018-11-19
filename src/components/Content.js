@@ -56,7 +56,9 @@ filterLocations = (query, locations) => {
           queryString = {this.state.query}
           handleChange = {this.handleTextChange}
         />
+
         <Map locations={this.state.locations} />
+
       </div>
     );
   }

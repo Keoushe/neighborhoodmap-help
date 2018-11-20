@@ -19,6 +19,8 @@ class Map extends React.Component {
           let content = this.prepareContent(locations[i]);
           infowindow.setContent(content);
           infowindow.open(window.mapObject, marker);
+          marker.setAnimation(4);
+
         });
         window.infowindow = infowindow;
         this.markers.push(marker);
@@ -43,7 +45,7 @@ removeMapMarkers = () => {
 }
 
   render() {
-    //  console.log("LOCATIONSSSS", this.props.locations);
+    
     this.removeMapMarkers()
     this.addMarkers(this.props.locations);
     return <div id="map" />;

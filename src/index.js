@@ -1,16 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
 import App from './App';
-
-
-//Working concept for google authentication concept found here: https://github.com/MatthewCranford/neighborhood-map/blob/master/src/index.js
-window.gm_authFailure = () => {
-  ReactDOM.render(
-    <h3>Google map fail load, please check your api key try again.</h3>,
-    window.document.getElementById('map'));
- }
+import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

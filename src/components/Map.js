@@ -45,10 +45,10 @@ removeMapMarkers = () => {
 }
 
   render() {
-    
+
     this.removeMapMarkers()
     this.addMarkers(this.props.locations);
-    return <div id="map" />;
+    return <div role="application" id="map" />;
   }
 }
 
